@@ -1,0 +1,718 @@
+/* ============================================================
+   CRM Andino Perú — Hoja de Estilos Moderna y Mejorada
+   Paleta: Vino elegante + Dorado cálido + Transiciones fluidas
+   ============================================================ */
+
+:root {
+  --vino-oscuro: #3d0f1f;
+  --vino-primario: #7c1f3d;
+  --vino-medio: #a83a5c;
+  --vino-claro: #fbeef2;
+  --dorado: #c9932c;
+  --dorado-hover: #a97a22;
+  --texto: #2b2024;
+  --gris-sub: #6b5b60;
+  --gris-borde: #e8dde1;
+  --fondo: #fdfaf9;
+  --blanco: #ffffff;
+  --sombra-suave: 0 4px 20px -2px rgba(61, 15, 31, 0.08);
+  --sombra-elevada: 0 20px 25px -5px rgba(61, 15, 31, 0.12), 0 8px 10px -6px rgba(61, 15, 31, 0.04);
+  --fuente: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mejora de accesibilidad: foco visible con el color vino de marca */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid var(--vino-medio);
+  outline-offset: 2px;
+}
+
+body {
+  font-family: var(--fuente);
+  color: var(--texto);
+  background-color: var(--fondo);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* ============ ENCABEZADO Y NAVEGACIÓN ============ */
+header {
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--gris-borde);
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--vino-primario);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo span {
+  color: var(--dorado);
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 8px;
+}
+
+header nav ul a {
+  color: var(--texto);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+header nav ul a:hover {
+  color: var(--vino-primario);
+  background-color: var(--vino-claro);
+}
+
+header nav ul a.activo {
+  color: var(--vino-primario);
+  font-weight: 700;
+  background-color: var(--vino-claro);
+}
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.8rem;
+  color: var(--vino-medio);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+/* ============ BOTONES ============ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.98rem;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: none;
+}
+
+.btn-solido {
+  background-color: var(--dorado);
+  color: var(--vino-oscuro);
+  box-shadow: 0 4px 14px rgba(201, 147, 44, 0.35);
+}
+
+.btn-solido:hover {
+  background-color: var(--dorado-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(201, 147, 44, 0.45);
+}
+
+.btn-outline {
+  border: 2px solid var(--vino-primario);
+  color: var(--vino-primario);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background-color: var(--vino-claro);
+  transform: translateY(-2px);
+}
+
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--vino-oscuro);
+  letter-spacing: -0.5px;
+  margin-top: 4px;
+}
+
+.intro-seccion {
+  color: var(--gris-sub);
+  max-width: 650px;
+  font-size: 1.1rem;
+  margin-top: 8px;
+}
+
+/* ============ HERO ============ */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  flex-wrap: wrap;
+  background: linear-gradient(135deg, #fdf2f5 0%, #f3dde3 100%);
+  max-width: none;
+  padding: 90px 24px;
+  border-bottom: 1px solid var(--gris-borde);
+}
+
+.hero-texto { max-width: 560px; }
+
+.hero h1 {
+  font-size: 3rem;
+  line-height: 1.15;
+  margin: 12px 0 16px;
+  color: var(--vino-oscuro);
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.hero .subtitulo {
+  color: var(--gris-sub);
+  font-size: 1.15rem;
+}
+
+.hero-botones {
+  display: flex;
+  gap: 16px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+/* DEMO PANEL */
+.panel-demo {
+  background-color: var(--blanco);
+  width: 460px;
+  max-width: 100%;
+  border-radius: 16px;
+  box-shadow: var(--sombra-elevada);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.panel-demo:hover {
+  transform: translateY(-4px);
+}
+
+.panel-demo-header {
+  background-color: var(--vino-oscuro);
+  color: var(--blanco);
+  padding: 14px 20px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.panel-demo-columnas {
+  display: flex;
+  gap: 12px;
+  padding: 18px;
+  overflow-x: auto;
+}
+
+.panel-col {
+  background-color: var(--fondo);
+  border-radius: 10px;
+  padding: 10px;
+  min-width: 110px;
+  flex: 1;
+}
+
+.panel-col h6 {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--gris-sub);
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.lead-card {
+  background-color: var(--blanco);
+  border: 1px solid var(--gris-borde);
+  border-left: 4px solid var(--vino-medio);
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  transition: all 0.2s ease;
+}
+
+.lead-card:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+}
+
+.lead-ganado {
+  border-left-color: #10b981;
+  background-color: #f0fdf4;
+}
+
+/* ============ FUNCIONALIDADES ============ */
+.funciones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.funcion-card {
+  background-color: var(--blanco);
+  border: 1px solid var(--gris-borde);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: var(--sombra-suave);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.funcion-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--vino-primario), var(--vino-medio));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.funcion-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sombra-elevada);
+}
+
+.funcion-card:hover::before {
+  opacity: 1;
+}
+
+.funcion-card h3 {
+  font-size: 1.25rem;
+  color: var(--vino-oscuro);
+  margin-bottom: 12px;
+}
+
+.funcion-card p {
+  color: var(--gris-sub);
+  font-size: 0.95rem;
+}
+
+/* ============ INTERACTIVIDAD MEJORADA EN PLANES ============ */
+.planes-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+}
+
+.planes-header .intro-seccion {
+  margin: 12px auto 0 auto;
+}
+
+/* Switch Mensual / Anual */
+.billing-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--texto);
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #cbd5e1;
+  transition: .3s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .3s;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+input:checked + .slider {
+  background-color: var(--vino-primario);
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+.badge-descuento {
+  background-color: #dcfce7;
+  color: #15803d;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 20px;
+}
+
+/* Tarjetas de Planes */
+.planes-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  align-items: stretch;
+  margin-top: 20px;
+}
+
+.plan-card {
+  background-color: var(--blanco);
+  border: 2px solid var(--gris-borde);
+  border-radius: 20px;
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: var(--sombra-suave);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.plan-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--sombra-elevada);
+  border-color: var(--vino-medio);
+}
+
+.plan-card.destacado {
+  border-color: var(--vino-primario);
+  background: linear-gradient(180deg, #ffffff 0%, #fbeef2 100%);
+  box-shadow: 0 12px 30px -5px rgba(124, 31, 61, 0.18);
+}
+
+.badge-popular {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, var(--vino-primario), var(--vino-medio));
+  color: var(--blanco);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(124, 31, 61, 0.3);
+}
+
+.plan-card h3 {
+  font-size: 1.5rem;
+  color: var(--vino-oscuro);
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.plan-card .plan-descripcion {
+  font-size: 0.9rem;
+  color: var(--gris-sub);
+  min-height: 40px;
+}
+
+.plan-precio-box {
+  margin: 24px 0;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.plan-precio-box .monto {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--vino-oscuro);
+  line-height: 1;
+}
+
+.plan-precio-box .periodo {
+  color: var(--gris-sub);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.plan-caracteristicas {
+  list-style: none;
+  margin-bottom: 32px;
+  flex: 1;
+}
+
+.plan-caracteristicas li {
+  padding: 10px 0;
+  font-size: 0.93rem;
+  color: var(--texto);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px dashed #f1f5f9;
+}
+
+.plan-caracteristicas li::before {
+  content: "✓";
+  color: #10b981;
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+
+.plan-card .btn {
+  width: 100%;
+  text-align: center;
+}
+
+/* ============ CÓMO FUNCIONA ============ */
+.pasos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.paso-card {
+  background-color: var(--blanco);
+  border: 1px solid var(--gris-borde);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: var(--sombra-suave);
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.paso-card:hover {
+  transform: translateY(-4px);
+}
+
+.paso-numero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--dorado), var(--dorado-hover));
+  color: var(--blanco);
+  font-weight: 800;
+  font-size: 1.1rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 10px rgba(201, 147, 44, 0.3);
+}
+
+.paso-card h3 {
+  font-size: 1.2rem;
+  color: var(--vino-oscuro);
+  margin-bottom: 8px;
+}
+
+.paso-card p {
+  color: var(--gris-sub);
+  font-size: 0.95rem;
+}
+
+/* ============ CTA ============ */
+.cta {
+  background: linear-gradient(135deg, var(--vino-oscuro) 0%, var(--vino-primario) 100%);
+  color: var(--blanco);
+  text-align: center;
+  max-width: none;
+  padding: 80px 24px;
+}
+
+.cta h2 {
+  color: var(--blanco);
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+
+.cta p {
+  color: #e3c4cd;
+  font-size: 1.15rem;
+  margin-bottom: 28px;
+}
+
+/* ============ CONTACTO ============ */
+.contacto-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+@media (max-width: 868px) {
+  .contacto-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contacto-info p {
+  font-size: 1.1rem;
+  color: var(--gris-sub);
+  line-height: 1.8;
+  margin-top: 16px;
+}
+
+#contacto form {
+  background: var(--blanco);
+  padding: 36px;
+  border-radius: 20px;
+  border: 1px solid var(--gris-borde);
+  box-shadow: var(--sombra-suave);
+  display: flex;
+  flex-direction: column;
+}
+
+#contacto label {
+  margin-top: 16px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--vino-oscuro);
+}
+
+#contacto label:first-of-type {
+  margin-top: 0;
+}
+
+#contacto input,
+#contacto select,
+#contacto textarea {
+  padding: 12px 16px;
+  margin-top: 6px;
+  border-radius: 10px;
+  border: 1px solid var(--gris-borde);
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  background-color: var(--fondo);
+}
+
+#contacto input:focus,
+#contacto select:focus,
+#contacto textarea:focus {
+  outline: none;
+  border-color: var(--vino-medio);
+  background-color: var(--blanco);
+  box-shadow: 0 0 0 4px rgba(168, 58, 92, 0.15);
+}
+
+#contacto input[type="submit"] {
+  margin-top: 24px;
+  background-color: var(--dorado);
+  color: var(--vino-oscuro);
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(201, 147, 44, 0.3);
+}
+
+#contacto input[type="submit"]:hover {
+  background-color: var(--dorado-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(201, 147, 44, 0.4);
+}
+
+/* ============ FOOTER ============ */
+footer {
+  background-color: var(--vino-oscuro);
+  color: var(--blanco);
+  text-align: center;
+  padding: 40px 24px;
+  margin-top: auto;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer nav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 18px 0;
+  flex-wrap: wrap;
+}
+
+footer nav a {
+  color: #c9a8b0;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+footer nav a:hover {
+  color: var(--blanco);
+}
+
+footer p:last-child {
+  color: #9c7d84;
+  font-size: 0.85rem;
+  margin-top: 12px;
+}
